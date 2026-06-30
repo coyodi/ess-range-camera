@@ -1,0 +1,7 @@
+{
+  "name": "Range Camera",
+  "short_name": "RangeCam",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f4f4f9"
+}
