@@ -157,27 +157,12 @@
             }
         }
     </script>
-<div id="debugLog" style="background:#222; color:#0f0; padding:10px; margin-top:20px; font-family:monospace; font-size:12px; border-radius:5px;">
-        SW Status: Booting...
-    </div>
-
     <script>
-        const debugLog = document.getElementById('debugLog');
-        
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                debugLog.innerText = 'SW Status: Attempting Registration...';
-                
-                navigator.serviceWorker.register('/sw.js')
-                    .then(reg => {
-                        debugLog.innerText = 'SW Status: SUCCESS! Scope is ' + reg.scope;
-                    })
-                    .catch(err => {
-                        debugLog.innerText = 'SW Status: FAILED! ' + err.message;
-                    });
+                navigator.serviceWorker.register('./sw.js')
+                    .catch(err => console.error('SW Registration Failed:', err));
             });
-        } else {
-            debugLog.innerText = 'SW Status: Service Workers not supported by this browser.';
         }
     </script>
 </body>
