@@ -1,9 +1,10 @@
-const CACHE_NAME = 'range-camera-v3';
+const CACHE_NAME = 'range-camera-v4';
 const ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
   '/sw.js'
+  './favicon.png'
 ];
 
 self.addEventListener('install', (e) => {
